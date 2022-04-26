@@ -392,7 +392,7 @@ predicate isPermutation(int *t, integer n) =
     \part Justifiez (rapidement) que ce prédicat est bien équivalent à la définition d’une permutation.
 
     \begin{solutionorbox}
-        METTEZ VOTRE RÉPONSE ICI.
+        Le prédicat décrit un atleast et un atmost, c'est donc bien la description d'une bijection
     \end{solutionorbox}
 
     On va également considérer un ordre entre les permutations. On le définit via les trois prédicats suivants :
@@ -416,7 +416,10 @@ isStrictlyBiggerPerm{L,M}(t,s,n) ||
     Complétez ces prédicats dans \texttt{formalism.h}. Les deux premiers lemmes de la section exercice 4 devraient être démontrés, mais pas les autres (c’est normal).
 
     \begin{solutionorbox}
-        METTEZ VOTRE RÉPONSE ICI.
+        /*@ predicate isMinPerm{L}(int *t, integer n) = \forall integer i ; 0<=i<n-1 ==> t[i] < t[i+1] ;
+
+        predicate isMaxPerm{L}(int *t, integer n) = \forall integer i ; 0<=i<n-1 ==> t[i] > t[i+1] ;
+     */
     \end{solutionorbox}
 
     \part Implémentez maintenant une fonction qui place dans \code{P} la permutation minimale, avec le prototype et le contrat partiel suivants.
