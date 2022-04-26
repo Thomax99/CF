@@ -4,7 +4,8 @@
 /*@
     requires n > 0;
     requires \valid(&P[0..n-1]);
-    ensures isPermutation(P, n) ;
+    requires isPermutation(\at(P, Pre), n);
+    ensures isPermutation(\at(P, Post), n) ;
 
     behavior maxPerm:
         assumes isMaxPerm{Pre}(P, n);
