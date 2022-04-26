@@ -541,7 +541,31 @@ bool NextPermutation(int *P, unsigned int n)
     Donnez une fonction qui respecte le même contrat (mais plus simple), mais qui ne répond pas à l’idée intuitive de ce que fait \texttt{nextPermutation} (on n’attend pas nécessairement que vous la prouviez avec Frama-C, vous pouvez vous contenter d’expliquer pourquoi elle satisfait le contrat). Indication : cette fonction pourrait systématiquement retourner la même permutation.
 
     \begin{solutionorbox}
-        METTEZ VOTRE RÉPONSE ICI.
+        Le contrat ne demande pas à ce que la fonction renvoie la permutation suivante.
+        En particulier, une fonction qui vérifie si la permutation est maximale, qui renvoie faux si oui, ou qui sinon met la permutation maximale
+        dans P serait vérifiée : 
+
+    \begin{lstlisting}
+bool NextPermutation(int *P, unsigned int n)
+{
+    unsigned int i = n - 1, j;
+    j = n - 1;
+    while (j > 0 && P[j - 1] >= P[j])
+    {
+        j--;
+    }
+    if (j == 0)
+    {
+        return false;
+    }
+    i = 0 ;
+    while (i < n) {
+        P[i] = n-i ;
+        i++ ;
+    }
+    return true;
+}
+    \end{lstlisting}
     \end{solutionorbox}
 
     \end{parts}

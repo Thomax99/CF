@@ -2,7 +2,8 @@
 #include "reverse.h"
 #include "swap-xor.h"
 
-bool NextPermutation(int *P, unsigned int n)
+
+bool NextPermutation2(int *P, unsigned int n)
 {
     unsigned int i = n - 1, j;
 

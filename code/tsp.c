@@ -4,7 +4,13 @@ int tsp(unsigned int n, int *P)
 {
     initPerm(P, n);
     int val = value(P, n);
+    //@ assert isPermutation(P, n) ;
     //@ assert \forall int* t; \separated(t+(0..n-1),P+(0..n-1)) ==>  isPermutation(t,n) ==> isBiggerPerm{Here,Here}(t,P,n) ==> unchangedTab{Here,Here}(t,P,0,n);
+    /*@
+        loop invariant \forall int * min; \separated(min+(0..n-1),P+(0..n-1)) ==>  isPermutation(min,n) ==>isMinPerm{Here}(min, n) ==>  isBiggerPerm{Here, Here}(min, P, n) ;
+        loop invariant isPermutation(P, n);
+        loop assigns val, P[0..n];
+    */
     while (!(isMaxPerm(P, n)))
     {
     L:
