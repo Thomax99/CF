@@ -439,7 +439,52 @@ void initPerm(int *P, unsigned int n);
     On attend à cette question que vous fournissiez les calculs de $\WLP$ adéquats.
 
     \begin{solutionorbox}
-        METTEZ VOTRE RÉPONSE ICI.
+        Soit $\phi = isMinPerm(P,n) \land isPermutation(P,n)$ 
+        
+        et $I = I_1 \land I_2 = 0 \leq i \leq n \land \forall 0 \leq k < n-i \Rightarrow P[k] ==k $
+        $\WLP(initPerm, \phi) \equiv \WLP(5,\WLP(13-16, \phi))$
+
+        $\equiv \WLP(5,I) \equiv 0 \leq n \leq n \land \forall 0 \leq k < n-n \Rightarrow P[k]==k$
+
+        La plus faible précondition avec ces annotations est donc, si elle est définie, $0 < n$
+
+        Il nous reste à démontrer que $\WLP(13-16,\phi)$ est bien définie. Pour cela il nous faut prouver les deux lemmes qui suivent.
+
+        \begin{lemma}
+            $\neg i>0 \land I \Rightarrow \phi$ :
+
+            $$\equiv \neg i>0 \land 0\leq i \leq n \land \forall 0 \leq k < n-i \Rightarrow P[k] ==k \Rightarrow \phi$$
+
+            $$\equiv i==0 \land \forall 0 \leq k < n \Rightarrow P[k] ==k \Rightarrow \forall 0\leq k < n-1 \Rightarrow P[k] < P[k+1] \land \forall  0 \leq k < n \Rightarrow 0 \leq P[k] < n \land \forall  0 \leq k < j < n \Rightarrow P[k] \not= P[j]$$
+        
+            $$equiv i==0 \land \forall 0 \leq k < n \Rightarrow P[k] ==k \Rightarrow \forall 0\leq k < n-1 \Rightarrow P[k] < P[k+1] \equiv \top$$
+            Car $P[k+1]==k+1$ et $P[k]==k$ donc $P[k+1] > p[k]$
+
+            $$\equiv i==0 \land \forall 0 \leq k < n \Rightarrow P[k] ==k \Rightarrow \forall  0 \leq k < n \Rightarrow 0 \leq P[k] < n \equiv \top$$
+            Car $k$ est compris entre $0$ et $n-1$, et $P[k]==k$
+
+            $$\equiv i==0 \land \forall 0 \leq k < n \Rightarrow P[k] ==k \Rightarrow\land \forall  0 \leq k < j < n \Rightarrow P[k] \not= P[j]\equiv \top$$
+            Car $P[k]==k$ donc pour chaque indice différent, on a une valeur différente.
+
+            On a donc bien $\neg i>0 \land I \Rightarrow \phi$ 
+        \end{lemma}
+        \begin{lemma}
+            $i>0 \land I \Rightarrow \WLP(14-15,I)$ :
+                On commence par calculer $\WLP(14-15,I)$:
+                $$\WLP(14-15,I)\equiv \WLP(14,i-1>0 \land 0\leq i-1 \leq n \land \forall 0 \leq k < n-(i-1) \Rightarrow P[k] ==k)$$
+
+                $$\equiv i-1>0 \land 0\leq i-1 \leq n \land \forall 0 \leq k < n-i-1 \Rightarrow P[k] ==k$$
+                Or, si $i-1>0$, alors $i>1$ et donc on a bien $0\leq i \leq n \forall n \geq 0$
+
+                D'autre par on remarque si on a $\forall 0 \leq k < n-(i-1) \Rightarrow P[k] ==k$ alors on a aussi $\forall 0 \leq k < n-i \Rightarrow P[k] ==k$
+                Car si la proprieté est vraie pour les $n-i+1$ premiers indices de $P$ alors elle est vraie pour les $n-i$ premiers indices aussi
+
+                On a donc bien $i>0 \land I \Rightarrow \WLP(14-15,I)$
+        \end{lemma}  
+        
+        Avec ces deux lemmes on peut donc conclure que $\WLP(14-15, \phi)$ est bien défini, et donc que le calcul de weakest precondition effectué plus haut est correct.
+
+        On peut en conclure que ${0\leq n}initPerm{\phi}$ est un triplet de Hoare valide.
     \end{solutionorbox}
 
     \part Démontrez la terminaison de cette fonction en donnant un variant pour votre boucle, et en démontrant que c’en est un.
