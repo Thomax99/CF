@@ -1,9 +1,9 @@
+
 \makeatletter
 \def\input@path{ {./} {../sty/} {sty/} }
 \makeatother
 
 \documentclass[11pt,answers]{exam}
-
 \usepackage{macro}
 
 
@@ -450,8 +450,8 @@ void initPerm(int *P, unsigned int n);
 
         Il nous reste à démontrer que $\WLP(13-16,\phi)$ est bien définie. Pour cela il nous faut prouver les deux lemmes qui suivent.
 
-        \begin{lemma}
-            $\neg i>0 \land I \Rightarrow \phi$ :
+        \begin{itemize}
+        \item    $\neg i>0 \land I \Rightarrow \phi$ :
 
             $$\equiv \neg i>0 \land 0\leq i \leq n \land \forall 0 \leq k < n-i \Rightarrow P[k] ==k \Rightarrow \phi$$
 
@@ -467,9 +467,7 @@ void initPerm(int *P, unsigned int n);
             Car $P[k]==k$ donc pour chaque indice différent, on a une valeur différente.
 
             On a donc bien $\neg i>0 \land I \Rightarrow \phi$ 
-        \end{lemma}
-        \begin{lemma}
-            $i>0 \land I \Rightarrow \WLP(14-15,I)$ :
+        \item    $i>0 \land I \Rightarrow \WLP(14-15,I)$ :
                 On commence par calculer $\WLP(14-15,I)$:
                 $$\WLP(14-15,I)\equiv \WLP(14,i-1>0 \land 0\leq i-1 \leq n \land \forall 0 \leq k < n-(i-1) \Rightarrow P[k] ==k)$$
 
@@ -480,7 +478,7 @@ void initPerm(int *P, unsigned int n);
                 Car si la proprieté est vraie pour les $n-i+1$ premiers indices de $P$ alors elle est vraie pour les $n-i$ premiers indices aussi
 
                 On a donc bien $i>0 \land I \Rightarrow \WLP(14-15,I)$
-        \end{lemma}  
+        \end{itemize}  
         
         Avec ces deux lemmes on peut donc conclure que $\WLP(14-15, \phi)$ est bien défini, et donc que le calcul de weakest precondition effectué plus haut est correct.
 
