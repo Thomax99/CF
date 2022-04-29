@@ -9,20 +9,21 @@ int tsp(unsigned int n, int *P)
     //@ assert \forall integer i,j; 0 <= i < j < n ==> P[i] != P[j];
     //@ assert \forall int* t; \separated(t+(0..n-1),P+(0..n-1)) ==>  isPermutation(t,n) ==> isBiggerPerm{Here,Here}(t,P,n) ==> unchangedTab{Here,Here}(t,P,0,n);
     /*@
-        loop invariant \forall int * min; \separated(min+(0..n-1),P+(0..n-1)) ==>  isPermutation(min,n) ==>isMinPerm{Here}(min, n) ==>  isBiggerPerm{Here, Here}(min, P, n) ;
+
+        loop invariant \forall int* t; \separated(t+(0..n-1),P+(0..n-1)) ==> unchangedTab{Here,Here}(t,t,0,n);
+        loop invariant \forall int* t; \separated(t+(0..n-1),P+(0..n-1)) ==> isBiggerPerm{Here,Here}(t,P,n) ==> isBiggerPerm{Here,Here}(t,P,n);
+        loop invariant \forall int* t; \separated(t+(0..n-1),P+(0..n-1)) ==> isPermutation(t,n) ==> isBiggerPerm{Here,Here}(t,P,n) ==> value(t,n) >= val;
         loop invariant isPermutation(P, n);
+        loop invariant \forall int* t; \separated(t+(0..n-1),P+(0..n-1)) ==> isPermutation(t,n) ==> isMaxPerm{Here}(t,n) ==> isBiggerPerm{Here, Here}(P, t, n) ;
+        loop invariant \forall int* t; \separated(t+(0..n-1),P+(0..n-1)) ==> isPermutation(t,n) ==> isMinPerm{Here}(t,n) ==> isBiggerPerm{Here, Here}(t, P, n) ;
         loop assigns val, P[0..n];
     */
     while (!(isMaxPerm(P, n)))
     {
-    //@ assert \forall integer i; 0 <= i < n ==> 0 <= P[i] < n ;
-    //@ assert \forall integer i,j; 0 <= i < j < n ==> P[i] != P[j];
-    //@ assert isPermutation(P, n) ;
     L:
+        //@ assert isPermutation(P, n);
         NextPermutation(P, n);
-    //@ assert \forall integer i; 0 <= i < n ==> 0 <= P[i] < n ;
-    //@ assert \forall integer i,j; 0 <= i < j < n ==> P[i] != P[j];
-        //@ assert isPermutation(P, n) ;
+        //@ assert isPermutation(P, n);
 
         //@ assert \forall int* t; \separated(t+(0..n-1),P+(0..n-1)) ==> unchangedTab{L,Here}(t,t,0,n);
         //@ assert \forall int* t; \separated(t+(0..n-1),P+(0..n-1)) ==> isBiggerPerm{Here,L}(t,P,n) ==> isBiggerPerm{L,L}(t,P,n);
