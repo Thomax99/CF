@@ -416,9 +416,9 @@ isStrictlyBiggerPerm{L,M}(t,s,n) ||
     Complétez ces prédicats dans \texttt{formalism.h}. Les deux premiers lemmes de la section exercice 4 devraient être démontrés, mais pas les autres (c’est normal).
 
     \begin{solutionorbox}
-        /*@ predicate isMinPerm{L}(int *t, integer n) = \forall integer i ; 0<=i<n-1 ==> t[i] < t[i+1] ;
+        /*@ predicate isMinPerm{L}(int *t, integer n) = $\backslash$ forall integer i ; 0<=i<n-1 ==> t[i] < t[i+1] ;
 
-        predicate isMaxPerm{L}(int *t, integer n) = \forall integer i ; 0<=i<n-1 ==> t[i] > t[i+1] ;
+        predicate isMaxPerm{L}(int *t, integer n) = $\backslash$ forall integer i ; 0<=i<n-1 ==> t[i] > t[i+1] ;
      */
     \end{solutionorbox}
 
@@ -515,7 +515,39 @@ bool NextPermutation(int *P, unsigned int n)
     Donnez une formalisation de ces post-conditions :
 
     \begin{solutionorbox}
-        METTEZ VOTRE RÉPONSE ICI.
+        Logiquement, on a deux cas différents. Une formalisation en utilisant des comportements est donc de mise.
+
+        On a ainsi un premier comportement :
+
+\begin{lstlisting}
+behavior maxPerm:
+    assumes isMaxPerm{Pre}(P, n);
+    ensures \result == false;
+    ensures unchangedTab{Pre,Post}(P, P, 0, n)  ;
+\end{lstlisting}
+
+    Celui exprime logiquement le fait que on ait une permutation maximale au départ. Il requiert ainsi de ne pas changer la permutation et de renvoyer faux.
+
+    Le deuxième comportement est le suivant : 
+
+\begin{lstlisting}
+behavior notMaxPerm:
+    assumes !isMaxPerm{Pre}(P, n);
+    ensures \result == true;
+    ensures isStrictlyBiggerPerm{Pre,Post}(P, P, n) ;
+\end{lstlisting}
+
+    Celui-ci est dans le cas où on a pas une permutation maximale.
+    On remarque que l'on demande simplement d'avoir une permutation plus grande et pas la permutation juste après.
+    Afin d'exprimer une telle post-condition, on dirait par exemple que après, toute permutation strictement plus grande que celle du départ est plus grande ou égale à celel de l'arrivée.
+
+    Bien entendu, on oublie pas la partie du contrat qui dit que l'on a bien une permutation à la fin ; présente hors des comportements.
+
+\begin{lstlisting}
+ensures isPermutation(\at(P, Post), n) ;
+\end{lstlisting}
+
+
     \end{solutionorbox}
 
     Bon, je ne vais pas vous faire l’insulte de vous demander de calculer les $\WLP$ des deux boucles, puisque leur corps n’est pas ultra compliqué.
@@ -523,15 +555,61 @@ bool NextPermutation(int *P, unsigned int n)
     \part Pour la première boucle, déterminez des invariants. Le but est surtout de déterminer ce que fait la boucle. Indication : la boucle s’arrête dès qu’on n’a trouvé un indice $j$ pour lequel $P[j-1] > P[j]$. Que peut-on donc dire sur la fin du tableau si on est en $j$ ? (ceci est une question réthorique pour que vous trouviez l’invariant). Déterminez ces invariants et justifiez (rapidement) que c’en sont : il faut deux invariants. Déterminez une clause assigns et un variant.
 
     \begin{solutionorbox}
-        METTEZ VOTRE RÉPONSE ICI.
-    \end{solutionorbox}
+
+        Lorsque l'on est en $j$, on a que des indices après qui sont décroissants, et comme on a une permutation, tous les indices sont différents donc c'est une décroissance stricte.
+        
+        
+        On a donc un premier invariant qui est le suivant :
+
+\begin{lstlisting}
+loop invariant \forall integer i ; j<=i<n-1 ==> P[i] > P[i+1] ;
+\end{lstlisting}
+
+        C'est bien un invariant : c'est en fait l'essence même de la condition de boucle.
+        En effet, on sort de la boucle seulement lorsque $P[j-1]$ est inférieur à $P[j]$. Donc, tant qu'on est dans la boucle, on est décroissant,
+        et par construction, tout ce qui est après $j$ est décroissant.
+
+        Le deuxième invariant est :
+
+        \begin{lstlisting}
+loop invariant n > j >= 0;
+    \end{lstlisting}
+        Il s'agit aussi d'un invariant... j décroit dans la boucle et commence à $n-1$ donc il est strictement inférieur à $n$ ; et si $j==0$, on sort de la boucle.
+
+
+        On a aussi les clauses assigns et variant suivantes :
+
+        \begin{lstlisting}
+    loop assigns j;
+    loop variant j;
+        \end{lstlisting}
+        \end{solutionorbox}
 
 
     \part Même question pour la seconde boucle. De la même manière, il faut être capable de décrire ce qui est vrai sur la portion du tableau exploré. Intuitivement, cette boucle place j sur l’élément suivant celui qui est le plus petit élément plus grand que P[i] (c’est pour ça qu’on fait j-- après la boucle).
     Il y a besoin de deux invariants. Donnez la clause assigns et un variant.
 
     \begin{solutionorbox}
-        METTEZ VOTRE RÉPONSE ICI.
+        Les deux invariants utilisés sont les suivants : 
+
+        \begin{lstlisting}
+loop invariant i < j <= n ;
+loop invariant \forall integer k ; i<k<j ==> P[i] < P[k] ;
+        \end{lstlisting}
+
+        Le premier donne un encadrement sur $j$. Comme $i$ vaut $j-1$ au départ de la boucle et que $j$ ne peut que croître ;
+        et qu'en plus on a la condition $j<n$ dans la boucle, c'est bien un invariant.
+
+        Le deuxième est plus intéressant ; il permet de comprendre le sens de la boucle. Il dit en effet que chaque case du tableau compris entre
+        i et j et plus grande que $P[i]$. C'est aussi un invariant par construction même de la boucle : on augmente $j$ seulement si le $P[j]$ actuel est plus grand que $P[i]$.
+    
+        Les clauses assigns et variant sont les suivantes : 
+
+        \begin{lstlisting}
+    loop assigns j;
+    loop variant n-j;
+        \end{lstlisting}
+
     \end{solutionorbox}
 
     \part Terminez les annotations dans le fichier pour démontrer le contrat de cette fonction. En particulier, précisez les requires pertinent, la bonne clause assigns pour le contrat, et la clause terminates qui assure que cette fonction termine.
