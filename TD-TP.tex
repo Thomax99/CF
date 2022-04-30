@@ -457,7 +457,7 @@ void initPerm(int *P, unsigned int n);
 
             $\equiv i==0 \land \forall 0 \leq k < n \Rightarrow P[k] ==k \Rightarrow \forall 0\leq k < n-1 \Rightarrow P[k] < P[k+1] \land \forall  0 \leq k < n \Rightarrow 0 \leq P[k] < n \land \forall  0 \leq k < j < n \Rightarrow P[k] \not= P[j]$
         
-            $equiv i==0 \land \forall 0 \leq k < n \Rightarrow P[k] ==k \Rightarrow \forall 0\leq k < n-1 \Rightarrow P[k] < P[k+1] \equiv \top$
+            $\equiv i==0 \land \forall 0 \leq k < n \Rightarrow P[k] ==k \Rightarrow \forall 0\leq k < n-1 \Rightarrow P[k] < P[k+1] \equiv \top$
 
             Car $P[k+1]==k+1$ et $P[k]==k$ donc $P[k+1] > p[k]$
 
@@ -487,7 +487,7 @@ void initPerm(int *P, unsigned int n);
         
         Avec ces deux lemmes on peut donc conclure que $\WLP(14-15, \phi)$ est bien défini, et donc que le calcul de weakest precondition effectué plus haut est correct.
 
-        On peut en conclure que ${0\leq n}initPerm{\phi}$ est un triplet de Hoare valide.
+        On peut en conclure que $\{0\leq n\}initPerm\{\phi\}$ est un triplet de Hoare valide.
     \end{solutionorbox}
 
     \part Démontrez la terminaison de cette fonction en donnant un variant pour votre boucle, et en démontrant que c’en est un.
