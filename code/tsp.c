@@ -29,7 +29,7 @@ int tsp(unsigned int n, int *P)
         //@ assert !isMaxPerm{L}(P, n) ==> isStrictlyBiggerPerm{L,Here}(P,P,n) ;
         //@ assert isMaxPerm{L}(P, n) ==> unchangedTab{L,Here}(P,P,0,n) ;
         //@ assert isBiggerPerm{L,Here}(P,P,n) ;
-        //@ assert \forall int* t; \separated(t+(0..n-1),P+(0..n-1)) ==> isBiggerPerm{Here,L}(t,P,n) ==> isBiggerPerm{L,L}(t,P,n);
+        // @ assert \forall int* t; \separated(t+(0..n-1),P+(0..n-1)) ==> isBiggerPerm{Here,L}(t,P,n) ==> isBiggerPerm{L,L}(t,P,n);
         //@ assert \forall int* t; \separated(t+(0..n-1),P+(0..n-1)) ==> isPermutation(t,n) ==> isBiggerPerm{Here,L}(t,P,n) ==> value(t,n) >= val;
         if (val > value(P, n))
             val = value(P, n);
