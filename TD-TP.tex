@@ -746,7 +746,7 @@ int tsp(unsigned int n, int *P)
     Je ne demande pas de le faire sur Frama-C (vous pouvez si vous le souhaitez, mais je pense que c’est un peu technique à écrire proprement).
 
     \begin{solutionorbox}
-        On peut prouver que la fonction termine en utilisant un variant sur $\[\[1..n\]\]^n$, et l'ordre utilisé est l'ordre classique sur $\mathbb{N}^n$ :
+        On peut prouver que la fonction termine en utilisant un variant sur $[[1..n]]^n$, et l'ordre utilisé est l'ordre classique sur $\mathbb{N}^n$ :
         c'est à dire $(x_1, x_2, ..., x_n) < (x_1', x_2', ..., x_n')$ si il y a un $i$ compris entre $1$ et $n$ tel que $x_j$ == $x_j'$ pour chaque $j$ strictement plus petit que $i$ ;
         et $x_i < x_i'$ (on a pas de condition sur les indices après $i$). Cet ordre est bien un wqo car l'ensemble considéré est fini.
 
@@ -754,8 +754,8 @@ int tsp(unsigned int n, int *P)
         et $P_{post}$ la valeur après le tour de boucle, comme si on entre dans la boucle on effectue un NextPermutation, et que si on entre dans la boucle, $P_{pre}$ n'est pas maximal,
         on est sûr d'avoir le comportement $notMaxPerm$ qui s'applique, et on a donc $P_{pre} < P_{post}$ : c'est exactement la proprieté de ce comportement.
 
-        En outre, comme on a une permutation, $P$ est toujours dans $\[\[1..n\]\]^n$.
-        Ainsi, la valeur de $P$ par les tours de boucles effectuent une chaine strictement croissante d'éléments de $\[\[1..n\]\]^n$ sur un ordre wqo, et donc comme on a un élément maximal car $\[\[1..n\]\]^n$ est fini, on est sûr de terminer la boucle.
+        En outre, comme on a une permutation, $P$ est toujours dans $[[1..n]]^n$.
+        Ainsi, la valeur de $P$ par les tours de boucles effectuent une chaine strictement croissante d'éléments de $[[1..n]]^n$ sur un ordre wqo, et donc comme on a un élément maximal car $[[1..n]]^n$ est fini, on est sûr de terminer la boucle.
     \end{solutionorbox}
 
     \part (Bonus ++) Frama-C n’arrive pas à démontrer certains des lemmes qu’on a admit.
