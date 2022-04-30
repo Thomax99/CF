@@ -1,1 +1,0 @@
-{ "prover": "Z3:4.8.11:counterexamples", "verdict": "timeout", "time": 10. }
