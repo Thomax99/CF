@@ -1,6 +1,20 @@
 #include "reverse.h"
 
-void reverse(int *t, unsigned int i, unsigned int j, unsigned int n)
+/*@ decreases j;
+*/
+void reverse(int *t, unsigned int i, unsigned int j, unsigned int n) {
+    if (i < j) {
+        int aux = t[i];
+        t[i] = t[j];
+        t[j] = aux;
+        i++ ;
+        j-- ;
+        if (i<j)
+            reverse(t, i, j, n) ;
+    }
+}
+
+void reverseP(int *t, unsigned int i, unsigned int j, unsigned int n)
 {
     /*@ loop invariant 0<=\at(i, Pre)<=i<=j+1<=\at(j, Pre)+1<=n;
         loop invariant \forall integer k; i<=k<=j ==> t[k] == \at(t[k], Pre) ;
