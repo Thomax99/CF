@@ -20,6 +20,7 @@
 
     complete behaviors;
     disjoint behaviors maxPerm,notMaxPerm;
+    assigns P[0..n-1];
 
 */
 bool NextPermutation(int *P, unsigned int n);
