@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2020.9.7)  30 APR 2022 17:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2020.9.7)  30 APR 2022 18:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1205,30 +1205,30 @@ Overfull \hbox (8.79752pt too wide) in paragraph at lines 415--417
  []
 
 [8] [9] [10]
-Overfull \hbox (7.89868pt too wide) in paragraph at lines 558--559
+Overfull \hbox (7.89868pt too wide) in paragraph at lines 562--563
 []\T1/cmr/m/n/10.95 Si la fonc-tion re-�oit une per-mu-ta-tion maxi-male (i.e.,
  qui sa-tis-fait []),
  []
 
 [11]
-Overfull \hbox (61.54948pt too wide) in paragraph at lines 613--614
+Overfull \hbox (61.54948pt too wide) in paragraph at lines 617--618
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [12]
-Overfull \hbox (27.59898pt too wide) in paragraph at lines 645--646
+Overfull \hbox (27.59898pt too wide) in paragraph at lines 649--650
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-
-Overfull \hbox (1.02629pt too wide) in paragraph at lines 666--668
+[13]
+Overfull \hbox (1.02629pt too wide) in paragraph at lines 670--672
 \T1/cmr/m/n/10.95 Frama-C, vous pou-vez vous conten-ter d'ex-pli-quer pour-quoi
  elle sa-tis-fait le contrat).
  []
 
-[13] [14]
+[14]
 
 ! LaTeX Error: Bad math environment delimiter.
 
@@ -1236,7 +1236,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.743 ...n termine en utilisant un variant sur $\[
+l.747 ...n termine en utilisant un variant sur $\[
                                                   \[1..n\]\]^n$, et l'ordre ...
 
 ? 
@@ -1247,46 +1247,46 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.743 ...termine en utilisant un variant sur $\[\[
+l.747 ...termine en utilisant un variant sur $\[\[
                                                   1..n\]\]^n$, et l'ordre ut...
 
 ? 
 ! Missing \endgroup inserted.
 <inserted text> 
                 \endgroup 
-l.743 ...e en utilisant un variant sur $\[\[1..n\]
+l.747 ...e en utilisant un variant sur $\[\[1..n\]
                                                   \]^n$, et l'ordre utilisé...
 
 ? 
 ! Missing \endgroup inserted.
 <inserted text> 
                 \endgroup 
-l.743 ...e en utilisant un variant sur $\[\[1..n\]
+l.747 ...e en utilisant un variant sur $\[\[1..n\]
                                                   \]^n$, et l'ordre utilisé...
 
 ? 
 
-! LaTeX Error: \begin{TheSolution} on input line 743 ended by \end{equation*}.
+! LaTeX Error: \begin{TheSolution} on input line 747 ended by \end{equation*}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.743 ...e en utilisant un variant sur $\[\[1..n\]
+l.747 ...e en utilisant un variant sur $\[\[1..n\]
                                                   \]^n$, et l'ordre utilisé...
 
 ? 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.743 ...e en utilisant un variant sur $\[\[1..n\]
+l.747 ...e en utilisant un variant sur $\[\[1..n\]
                                                   \]^n$, et l'ordre utilisé...
 
 ? 
 ! Missing } inserted.
 <inserted text> 
                 }
-l.743 ...e en utilisant un variant sur $\[\[1..n\]
+l.747 ...e en utilisant un variant sur $\[\[1..n\]
                                                   \]^n$, et l'ordre utilisé...
 
 ? 
@@ -1297,40 +1297,40 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.743 ...en utilisant un variant sur $\[\[1..n\]\]
+l.747 ...en utilisant un variant sur $\[\[1..n\]\]
                                                   ^n$, et l'ordre utilisé e...
 
 ? 
 
-! LaTeX Error: \begin{solutionorbox} on input line 742 ended by \end{equation*}
+! LaTeX Error: \begin{solutionorbox} on input line 746 ended by \end{equation*}
 .
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.743 ...en utilisant un variant sur $\[\[1..n\]\]
+l.747 ...en utilisant un variant sur $\[\[1..n\]\]
                                                   ^n$, et l'ordre utilisé e...
 
 ? 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.743 ...en utilisant un variant sur $\[\[1..n\]\]
+l.747 ...en utilisant un variant sur $\[\[1..n\]\]
                                                   ^n$, et l'ordre utilisé e...
 
 ? 
 ! Display math should end with $$.
 <to be read again> 
                    \endgroup 
-l.743 ...en utilisant un variant sur $\[\[1..n\]\]
+l.747 ...en utilisant un variant sur $\[\[1..n\]\]
                                                   ^n$, et l'ordre utilisé e...
 
 ? 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.743 ...n utilisant un variant sur $\[\[1..n\]\]^
+l.747 ...n utilisant un variant sur $\[\[1..n\]\]^
                                                   n$, et l'ordre utilisé es...
 
 ? 
@@ -1341,7 +1341,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.751 ...ne permutation, $P$ est toujours dans $\[
+l.755 ...ne permutation, $P$ est toujours dans $\[
                                                   \[1..n\]\]^n$.
 ? 
 
@@ -1351,36 +1351,36 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.751 ... permutation, $P$ est toujours dans $\[\[
+l.755 ... permutation, $P$ est toujours dans $\[\[
                                                   1..n\]\]^n$.
 ? 
 ! Missing \endgroup inserted.
 <inserted text> 
                 \endgroup 
-l.751 ...tation, $P$ est toujours dans $\[\[1..n\]
+l.755 ...tation, $P$ est toujours dans $\[\[1..n\]
                                                   \]^n$.
 ? 
 ! Missing \endgroup inserted.
 <inserted text> 
                 \endgroup 
-l.751 ...tation, $P$ est toujours dans $\[\[1..n\]
+l.755 ...tation, $P$ est toujours dans $\[\[1..n\]
                                                   \]^n$.
 ? 
 
-! LaTeX Error: \begin{solutionorbox} on input line 742 ended by \end{equation*}
+! LaTeX Error: \begin{solutionorbox} on input line 746 ended by \end{equation*}
 .
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.751 ...tation, $P$ est toujours dans $\[\[1..n\]
+l.755 ...tation, $P$ est toujours dans $\[\[1..n\]
                                                   \]^n$.
 ? 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.751 ...tation, $P$ est toujours dans $\[\[1..n\]
+l.755 ...tation, $P$ est toujours dans $\[\[1..n\]
                                                   \]^n$.
 ? 
 
@@ -1390,35 +1390,36 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.751 ...tion, $P$ est toujours dans $\[\[1..n\]\]
+l.755 ...tion, $P$ est toujours dans $\[\[1..n\]\]
                                                   ^n$.
 ? 
 
-! LaTeX Error: \begin{parts} on input line 734 ended by \end{equation*}.
+! LaTeX Error: \begin{parts} on input line 738 ended by \end{equation*}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.751 ...tion, $P$ est toujours dans $\[\[1..n\]\]
+l.755 ...tion, $P$ est toujours dans $\[\[1..n\]\]
                                                   ^n$.
 ? 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.751 ...tion, $P$ est toujours dans $\[\[1..n\]\]
+l.755 ...tion, $P$ est toujours dans $\[\[1..n\]\]
                                                   ^n$.
 ? 
 ! Display math should end with $$.
 <to be read again> 
                    \endgroup 
-l.751 ...tion, $P$ est toujours dans $\[\[1..n\]\]
+l.755 ...tion, $P$ est toujours dans $\[\[1..n\]\]
                                                   ^n$.
 ? 
+[15]
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.751 ...ion, $P$ est toujours dans $\[\[1..n\]\]^
+l.755 ...ion, $P$ est toujours dans $\[\[1..n\]\]^
                                                   n$.
 ? 
 
@@ -1428,7 +1429,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.752 ...trictement croissante d'éléments de $\[
+l.756 ...trictement croissante d'éléments de $\[
                                                   \[1..n\]\]^n$ sur un ordre...
 
 ? 
@@ -1439,21 +1440,21 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.752 ...ictement croissante d'éléments de $\[\[
+l.756 ...ictement croissante d'éléments de $\[\[
                                                   1..n\]\]^n$ sur un ordre w...
 
 ? 
 ! Missing \endgroup inserted.
 <inserted text> 
                 \endgroup 
-l.752 ...nt croissante d'éléments de $\[\[1..n\]
+l.756 ...nt croissante d'éléments de $\[\[1..n\]
                                                   \]^n$ sur un ordre wqo, et...
 
 ? 
 ! Missing \endgroup inserted.
 <inserted text> 
                 \endgroup 
-l.752 ...nt croissante d'éléments de $\[\[1..n\]
+l.756 ...nt croissante d'éléments de $\[\[1..n\]
                                                   \]^n$ sur un ordre wqo, et...
 
 ? 
@@ -1464,14 +1465,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.752 ...nt croissante d'éléments de $\[\[1..n\]
+l.756 ...nt croissante d'éléments de $\[\[1..n\]
                                                   \]^n$ sur un ordre wqo, et...
 
 ? 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.752 ...nt croissante d'éléments de $\[\[1..n\]
+l.756 ...nt croissante d'éléments de $\[\[1..n\]
                                                   \]^n$ sur un ordre wqo, et...
 
 ? 
@@ -1482,7 +1483,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.752 ... croissante d'éléments de $\[\[1..n\]\]
+l.756 ... croissante d'éléments de $\[\[1..n\]\]
                                                   ^n$ sur un ordre wqo, et d...
 
 ? 
@@ -1493,35 +1494,35 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.752 ... croissante d'éléments de $\[\[1..n\]\]
+l.756 ... croissante d'éléments de $\[\[1..n\]\]
                                                   ^n$ sur un ordre wqo, et d...
 
 ? 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.752 ... croissante d'éléments de $\[\[1..n\]\]
+l.756 ... croissante d'éléments de $\[\[1..n\]\]
                                                   ^n$ sur un ordre wqo, et d...
 
 ? 
 ! Display math should end with $$.
 <to be read again> 
                    \endgroup 
-l.752 ... croissante d'éléments de $\[\[1..n\]\]
+l.756 ... croissante d'éléments de $\[\[1..n\]\]
                                                   ^n$ sur un ordre wqo, et d...
 
 ? 
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.752 ... croissante d'éléments de $\[\[1..n\]\]
+l.756 ... croissante d'éléments de $\[\[1..n\]\]
                                                   ^n$ sur un ordre wqo, et d...
 
 ? 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.752 ...croissante d'éléments de $\[\[1..n\]\]^
+l.756 ...croissante d'éléments de $\[\[1..n\]\]^
                                                   n$ sur un ordre wqo, et do...
 
 ? 
@@ -1532,7 +1533,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.752 ...c comme on a un élément maximal car $\[
+l.756 ...c comme on a un élément maximal car $\[
                                                   \[1..n\]\]^n$ est fini, on...
 
 ? 
@@ -1543,21 +1544,21 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.752 ...comme on a un élément maximal car $\[\[
+l.756 ...comme on a un élément maximal car $\[\[
                                                   1..n\]\]^n$ est fini, on e...
 
 ? 
 ! Missing \endgroup inserted.
 <inserted text> 
                 \endgroup 
-l.752 ...on a un élément maximal car $\[\[1..n\]
+l.756 ...on a un élément maximal car $\[\[1..n\]
                                                   \]^n$ est fini, on est sû...
 
 ? 
 ! Missing \endgroup inserted.
 <inserted text> 
                 \endgroup 
-l.752 ...on a un élément maximal car $\[\[1..n\]
+l.756 ...on a un élément maximal car $\[\[1..n\]
                                                   \]^n$ est fini, on est sû...
 
 ? 
@@ -1568,21 +1569,21 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.752 ...on a un élément maximal car $\[\[1..n\]
+l.756 ...on a un élément maximal car $\[\[1..n\]
                                                   \]^n$ est fini, on est sû...
 
 ? 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.752 ...on a un élément maximal car $\[\[1..n\]
+l.756 ...on a un élément maximal car $\[\[1..n\]
                                                   \]^n$ est fini, on est sû...
 
 ? 
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.752 ...on a un élément maximal car $\[\[1..n\]
+l.756 ...on a un élément maximal car $\[\[1..n\]
                                                   \]^n$ est fini, on est sû...
 
 ? 
@@ -1593,7 +1594,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.752 ... a un élément maximal car $\[\[1..n\]\]
+l.756 ... a un élément maximal car $\[\[1..n\]\]
                                                   ^n$ est fini, on est sûr ...
 
 ? 
@@ -1604,61 +1605,60 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.752 ... a un élément maximal car $\[\[1..n\]\]
+l.756 ... a un élément maximal car $\[\[1..n\]\]
                                                   ^n$ est fini, on est sûr ...
 
 ? 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.752 ... a un élément maximal car $\[\[1..n\]\]
+l.756 ... a un élément maximal car $\[\[1..n\]\]
                                                   ^n$ est fini, on est sûr ...
 
 ? 
 ! Display math should end with $$.
 <to be read again> 
                    \endgroup 
-l.752 ... a un élément maximal car $\[\[1..n\]\]
+l.756 ... a un élément maximal car $\[\[1..n\]\]
                                                   ^n$ est fini, on est sûr ...
 
 ? 
-[15]
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.752 ... a un élément maximal car $\[\[1..n\]\]
+l.756 ... a un élément maximal car $\[\[1..n\]\]
                                                   ^n$ est fini, on est sûr ...
 
 ? 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.752 ...a un élément maximal car $\[\[1..n\]\]^
+l.756 ...a un élément maximal car $\[\[1..n\]\]^
                                                   n$ est fini, on est sûr d...
 
 ? 
 ! Too many }'s.
 \endexam@MakeFramed ... \z@ \penalty -100 \egroup 
                                                   \begingroup \exam@put@fram...
-l.753     \end{solutionorbox}
+l.757     \end{solutionorbox}
                              
 ? 
 ! Undefined control sequence.
 \exam@put@frame ...\advance \dimen@ -\exam@fb@frh 
                                                   \relax \expandafter \endgr...
-l.753     \end{solutionorbox}
+l.757     \end{solutionorbox}
                              
 ? 
 ! Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.753     \end{solutionorbox}
+l.757     \end{solutionorbox}
                              
 ? 
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    \relax 
-l.753     \end{solutionorbox}
+l.757     \end{solutionorbox}
                              
 ? 
 
@@ -1668,19 +1668,19 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.753     \end{solutionorbox}
+l.757     \end{solutionorbox}
                              
 ? 
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.753     \end{solutionorbox}
+l.757     \end{solutionorbox}
                              
 ? 
 ! Extra \endgroup.
 \endsolutionorbox ... \end {TheSolution}\endgroup 
                                                   \else \egroup \fi 
-l.753     \end{solutionorbox}
+l.757     \end{solutionorbox}
                              
 ? 
 
@@ -1690,13 +1690,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.753     \end{solutionorbox}
+l.757     \end{solutionorbox}
                              
 ? 
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.753     \end{solutionorbox}
+l.757     \end{solutionorbox}
                              
 ? 
 
@@ -1706,13 +1706,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.769     \end{parts}
+l.773     \end{parts}
                      
 ? 
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.769     \end{parts}
+l.773     \end{parts}
                      
 ? 
 
@@ -1722,44 +1722,34 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.771 \end{questions}
+l.775 \end{questions}
                      
 ? 
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.771 \end{questions}
+l.775 \end{questions}
                      
 ? 
 [16]
 This exam contains 5 questions with 28 parts, 0 subparts, and 0 subsubparts.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 773.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 773.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 777.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 777.
 (./TD-TP.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 773.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 773.
-
-
-Package rerunfilecheck Warning: File `TD-TP.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `TD-TP.out':
-(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
-(rerunfilecheck)             After:  B236F3B1F258455BFA946635CACBD7EC;73.
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 773.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 777.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 777.
+Package rerunfilecheck Info: File `TD-TP.out' has not changed.
+(rerunfilecheck)             Checksum: B236F3B1F258455BFA946635CACBD7EC;73.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 777.
  ) 
 Here is how much of TeX's memory you used:
- 33434 strings out of 492615
- 609256 string characters out of 6131391
- 702256 words of memory out of 5000000
- 36679 multiletter control sequences out of 15000+600000
+ 33430 strings out of 492615
+ 609177 string characters out of 6131391
+ 700152 words of memory out of 5000000
+ 36675 multiletter control sequences out of 15000+600000
  553816 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,13n,83p,972b,1956s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,13n,83p,972b,2002s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/
@@ -1778,10 +1768,10 @@ sr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts
 /type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/cm-sup
 er/sfti1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0900.pfb></us
 r/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on TD-TP.pdf (16 pages, 342545 bytes).
+Output written on TD-TP.pdf (16 pages, 343124 bytes).
 PDF statistics:
- 424 PDF objects out of 1000 (max. 8388607)
- 365 compressed objects within 4 object streams
+ 431 PDF objects out of 1000 (max. 8388607)
+ 372 compressed objects within 4 object streams
  207 named destinations out of 1000 (max. 500000)
- 109 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 125 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -476,7 +476,7 @@ void initPerm(int *P, unsigned int n);
                 $\WLP(14-15,I)\equiv \WLP(14,i-1>0 \land 0\leq i-1 \leq n \land \forall 0 \leq k < n-(i-1) \Rightarrow P[k] ==k)$
 
                 $\equiv i-1>0 \land 0\leq i-1 \leq n \land \forall 0 \leq k < n-i-1 \Rightarrow P[k] ==k$
-                
+
                 Or, si $i-1>0$, alors $i>1$ et donc on a bien $0\leq i \leq n \forall n \geq 0$
 
                 D'autre par on remarque si on a $\forall 0 \leq k < n-(i-1) \Rightarrow P[k] ==k$ alors on a aussi $\forall 0 \leq k < n-i \Rightarrow P[k] ==k$
@@ -493,7 +493,13 @@ void initPerm(int *P, unsigned int n);
     \part Démontrez la terminaison de cette fonction en donnant un variant pour votre boucle, et en démontrant que c’en est un.
 
     \begin{solutionorbox}
-        METTEZ VOTRE RÉPONSE ICI.
+        On choisis le variant $n-i$, pour prouver que c'est un variant valide, il nous faut montrer qu’il est toujours
+        positif à l’entrée de la boucle, et qu’il décroit strictement à chaque tour de boucle.
+
+        $n-i \geq 0$ Car on a pour invariant $0 \leq i \leq n$ (ben voilà).
+
+
+        $\WLP(14-15,n-i) - \backslash at(n-i,Pre)= n-(i+1) -n + i = n - i-1 -n + i = -1 < 0$, Donc n-i strictement décroissant
     \end{solutionorbox}
 
     \part Votre implémentation de \code{initPerm} doit valider le contrat précédent dans Frama-C, ainsi que valider les assertions RTE, et comprendre la preuve de terminaison.
