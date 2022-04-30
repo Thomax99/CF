@@ -273,7 +273,7 @@ void reverse(int *t, unsigned int i, unsigned int j,
             \item $\WLP(10-14,I_1) = 0 \leq \backslash at(i, Pre) \leq i<=j+1 \leq \backslash at(j, Pre)+1 \leq n [j \leftarrow j-1][i \ \leftarrow i+1][t[j] \leftarrow aux][t[i] \leftarrow t[j]][aux \leftarrow t[i]]$
                   $\WLP(10-14,I_1) =  0 \leq \backslash at(i, Pre) \leq i+1<=j \leq \backslash at(j, Pre)+1 \leq n $
 
-                  Ainsi,  $i < j \land I \Rightarrow \WLP(10-14,I_1)$ est vrai car si $i < j$ alors $i+1<=j$ ; la valeur de $backslash at(i, Pre)$ ne change pas, donc son rapport à 0 ne change pas, et comme on a $I_1$ dans $I$, on a $\backslash at(i, Pre) \leq i$ et donc $\backslash at(i, Pre) \leq i+1$. De manière analogue, on montre que $j \leq \backslash at(j, Pre)+1 \leq n $ est vrai.
+                  Ainsi,  $i < j \land I \Rightarrow \WLP(10-14,I_1)$ est vrai car si $i < j$ alors $i+1<=j$ ; la valeur de $\backslash at(i, Pre)$ ne change pas, donc son rapport à 0 ne change pas, et comme on a $I_1$ dans $I$, on a $\backslash at(i, Pre) \leq i$ et donc $\backslash at(i, Pre) \leq i+1$. De manière analogue, on montre que $j \leq \backslash at(j, Pre)+1 \leq n $ est vrai.
             \item $\WLP(10-14,I_2) =\forall$ integer $k; i \leq k \leq j \Rightarrow t[k] == \backslash at(t[k], Pre)[j \leftarrow j-1][i \ \leftarrow i+1][t[j] \leftarrow aux][t[i] \leftarrow t[j]][aux \leftarrow t[i]]$
                   $\WLP(10-14,I_2) =\forall$ integer $k; i+1 \leq k \leq j-1 \Rightarrow t[k] == \backslash at(t[k], Pre)$.
 
@@ -740,6 +740,33 @@ int tsp(unsigned int n, int *P)
     \begin{parts}
 
     \part Ajoutez les annotations de boucle et les préconditions nécessaires pour démontrer la correction partielle de cette fonction.
+
+    \begin{solutionorbox}
+        Un petit point que nous souhaitons aborder : il nous a été impossible de valider sans condition la correction partielle de cette fonction.
+
+        En effet, tout est prouvé en vert ou vert/orange sauf un assert, qui est en orange.
+        Il s'agit de l'assert suivant : 
+
+\begin{lstlisting}
+//@ assert \forall int* t; \separated(t+(0..n-1),P+(0..n-1)) ==> isBiggerPerm{Here,L}(t,P,n) ==> isBiggerPerm{L,L}(t,P,n);
+\end{lstlisting}
+    
+        Il nous a néanmoins semblé inutile de se triturer (vraiment) trop la tête, car il nous semble logique que ceci soit vrai.
+
+        En effet, cet assert demande à ce que si un tableau $t$ est séparé de $P$, et que $P$ au temps $L$ est plus grand que $t$ maintenant,
+        alors $P$ au temps $L$ est plus grand que $t$ au temps $L$.
+
+        La raison pour laquelle il nous semble logique que cet assert soit vrai est que frama-c réussit à prouver sans problème l'assert suivant : 
+
+\begin{lstlisting}
+//@ assert \forall int* t; \separated(t+(0..n-1),P+(0..n-1)) ==> unchangedTab{L,Here}(t,t,0,n);
+\end{lstlisting}
+
+        Qui dit que si $t$ est séparé de $P$, alors $t$ au temps $L$ est égal à $t$ maintenant.
+        Ainsi, si un tableau $t$ est séparé de $P$, et que $P$ au temps $L$ est plus grand que $t$ maintenant, comme $t$ au temps $L$
+        est égal à $t$ maintenant, $P$ au temps $L$ est plus grand que $t$ au temps $L$.
+
+    \end{solutionorbox}
 
     \part Démontrez sur papier que la fonction termine, en donnant un variant de boucle. Ce variant pourra être dans un autre ordre bien fondé que sur $\mathbb{N},<$.
 
