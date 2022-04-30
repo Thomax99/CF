@@ -7,9 +7,9 @@ int tsp(unsigned int n, int *P)
     //@ assert \forall int* t; \separated(t+(0..n-1),P+(0..n-1)) ==>  isPermutation(t,n) ==> isBiggerPerm{Here,Here}(t,P,n) ==> unchangedTab{Here,Here}(t,P,0,n);
     /*@
 
-        loop invariant \forall int* t; \separated(t+(0..n-1),P+(0..n-1)) ==> unchangedTab{Here,Here}(t,t,0,n);
-        loop invariant \forall int* t; \separated(t+(0..n-1),P+(0..n-1)) ==> isBiggerPerm{Here,Here}(t,P,n) ==> isBiggerPerm{Here,Here}(t,P,n);
-        loop invariant \forall int* t; \separated(t+(0..n-1),P+(0..n-1)) ==> isPermutation(t,n) ==> isBiggerPerm{Here,Here}(t,P,n) ==> value(t,n) >= val;
+        loop invariant \forall int* t; \separated(t+(0..n-1),P+(0..n-1)) ==> unchangedTab{Pre,Post}(t,t,0,n);
+        loop invariant \forall int* t; \separated(t+(0..n-1),P+(0..n-1)) ==> isBiggerPerm{Pre,Pre}(t,P,n) ==> isBiggerPerm{Pre,Post}(t,P,n);
+        loop invariant \forall int* t; \separated(t+(0..n-1),P+(0..n-1)) ==> isPermutation(t,n) ==> isBiggerPerm{Pre,Post}(t,P,n) ==> value(t,n) >= val;
         loop invariant isPermutation(P, n);
         loop invariant \forall int* t; \separated(t+(0..n-1),P+(0..n-1)) ==> isPermutation(t,n) ==> isMaxPerm{Here}(t,n) ==> isBiggerPerm{Here, Here}(P, t, n) ;
         loop invariant \forall int* t; \separated(t+(0..n-1),P+(0..n-1)) ==> isPermutation(t,n) ==> isMinPerm{Here}(t,n) ==> isBiggerPerm{Here, Here}(t, P, n) ;
