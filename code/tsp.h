@@ -22,7 +22,7 @@ int value(int *t, unsigned int n);
 
 /*@
     requires n < INT_MAX;
-    requires \valid(&P[0..n]) ;
+    requires \valid(&P[0..n-1]) ;
     ensures \forall int* t; \separated(t+(0..n-1),P+(0..n-1)) ==> isPermutation(t,n) ==> value(t,n) >= \result;
  */
 int tsp(unsigned int n, int *P);
