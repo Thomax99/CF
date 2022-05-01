@@ -328,9 +328,9 @@ void reverse(int *t, unsigned int i, unsigned int j,
 
             \item $ i == \backslash at(j, Pre) -j  + \backslash at(i, Pre)$ ce qui est équivalent en début de boucle à $ i == j -j  + i$, soit $i == i$, ce qui semble aussi vachement vrai.
 
-            \item $\forall$ integer $k; (\backslash at(i, Pre) \leq k<i) \Rightarrow t[k] == \backslash at(t[j- k + i], Pre)$, ce qui est aussi vrai : $\forall$ integer $k; (\backslash at(i, Pre) \leq k<i)$ est équivalent à $\bot$ car i vaut sa valeur avant la boucle, et donc l'implication est vrai.
+            \item $\forall$ integer $k; (\backslash at(i, Pre) \leq k<i) \Rightarrow t[k] == \backslash at(t[j- k + i], Pre)$, ce qui est aussi vrai : $\forall$ integer $k; (\backslash at(i, Pre) \leq k<i)$ est équivalent à $\bot$ car i vaut sa valeur avant la boucle, et donc l'implication est vraie.
     
-            \item $\forall$ integer $k; j<k\backslash at(j, Pre) \Rightarrow t[k] == \backslash at(t[j- k + i], Pre)$, ce qui est aussi car la partie gauche de l'implication est toujours vraie.
+            \item $\forall$ integer $k; j<k\backslash at(j, Pre) \Rightarrow t[k] == \backslash at(t[j- k + i], Pre)$, ce qui est aussi vrai car la partie gauche de l'implication est toujours vraie.
 
             On en déduit ainsi que le triplet de \bsc{hoare} \{  $0 \leq i \leq n \wedge i \leq j+1 \wedge 0 \leq j < n$\} reverse \{$\Phi$\} est un triplet valide.
 
@@ -401,7 +401,10 @@ predicate isPermutation(int *t, integer n) =
     \part Justifiez (rapidement) que ce prédicat est bien équivalent à la définition d’une permutation.
 
     \begin{solutionorbox}
-        Le prédicat décrit un atleast et un atmost, c'est donc bien la description d'une bijection
+        Une application est bijective si tout élément de son ensemble d'arrivée a un et un seul antécédent. 
+        Ici, grâce à $\forall integer i; 0 <= i < n ==> 0 <= v[i] < n$ on voit bien que chaque nombre entre $0$ et $n$ possède une image dans le tableau comprise entre $0$ et $n$.
+        La deuxième moitié de la définition nous assure l'unicité de l'image dans l'ensemble d'arrivée, en effet on ne peut pas avoir deux valeurs identiques dans le tableau.
+        Cette description du prédicat avec une clause atleast et une clause atmost nous assure la bijection entre les deux ensembles.
     \end{solutionorbox}
 
     On va également considérer un ordre entre les permutations. On le définit via les trois prédicats suivants :
@@ -536,7 +539,7 @@ bool isMaxPerm(int *P, unsigned int n);
     Cela dit, si vous ne parvenez pas à tout démontrer et souhaitez me montrer sur papier ce que vous essayez de faire et faire des preuves partielles, vous pouvez le faire en suivant :
 
     \begin{solutionorbox}
-        METTEZ VOTRE RÉPONSE ICI.
+        Normalement notre implémentation réponds à tout
     \end{solutionorbox}
 
     \end{parts}
@@ -596,7 +599,7 @@ behavior maxPerm:
     ensures unchangedTab{Pre,Post}(P, P, 0, n)  ;
 \end{lstlisting}
 
-    Celui exprime logiquement le fait que on ait une permutation maximale au départ. Il requiert ainsi de ne pas changer la permutation et de renvoyer faux.
+    Celui-ci exprime logiquement le fait que la permutation passée en paramètre est maximale. Nextpermutation doit donc ne pas changer la permutation et de renvoyer faux.
 
     Le deuxième comportement est le suivant : 
 
@@ -607,11 +610,18 @@ behavior notMaxPerm:
     ensures isStrictlyBiggerPerm{Pre,Post}(P, P, n) ;
 \end{lstlisting}
 
-    Celui-ci est dans le cas où on a pas une permutation maximale.
+    Dans ce cas, la permutation P n'est pas une permutation maximale.
     On remarque que l'on demande simplement d'avoir une permutation plus grande et pas la permutation juste après.
-    Afin d'exprimer une telle post-condition, on dirait par exemple que après, toute permutation strictement plus grande que celle du départ est plus grande ou égale à celel de l'arrivée.
+    Afin d'exprimer une telle post-condition, on pourrai écrire une telle condition :
+\begin{lstlisting}
+ensures \forall int * t; 
+    isStrictlyBiggerPerm{Pre,Post}(P,t,n) 
+    ==> isBiggerPerm{Post, Post}(P,t,n);
+\end{lstlisting}
+    Ainsi on décrit que pour toute permutation strictement plus grande que la permutation P avant l'éxécution de NextPermutation, est plus grande ou égale à P après l'éxécution.
+    Ce qui nous prouve bien que la permutation P à la fin de NextPermutation est bien la permutation qui vient juste après la permutation passée en paramètre de la fonction.
 
-    Bien entendu, on oublie pas la partie du contrat qui dit que l'on a bien une permutation à la fin ; présente hors des comportements.
+    Bien entendu, on n'oublie pas la partie du contrat qui dit que l'on a bien une permutation à la fin ; présente hors des comportements.
 
 \begin{lstlisting}
 ensures isPermutation(\at(P, Post), n) ;
